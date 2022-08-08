@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SignalR.Data;
 using SignalR.Hubs;
+using SignalRSample.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +32,8 @@ else
 }
 app.MapHub<UserHub>("/hubs/userCount");
 app.MapHub<DeathlyHallowsHub>("/hubs/DeathlyHallows");
+app.MapHub<HouseGroupHub>("/hubs/houseGroup");
+app.MapHub<NotificationHub>("/hubs/notification");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -43,6 +46,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
-
 
 app.Run();
