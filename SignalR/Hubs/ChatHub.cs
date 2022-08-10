@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using SignalR.Data;
 
@@ -21,6 +22,7 @@ namespace SignalR.Hubs
             }
         }
 
+        [Authorize]
         public async Task SendMessageToReciever(string sender, string receiver, string message)
         {
             if (!string.IsNullOrEmpty(sender) && !string.IsNullOrEmpty(sender) && !string.IsNullOrEmpty(message))

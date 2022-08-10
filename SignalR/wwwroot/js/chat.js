@@ -30,7 +30,6 @@ document.getElementById("sendMessage").addEventListener("click", function (event
 })
 
 
-
 connectionChat.start().then(function () {
     document.getElementById("sendMessage").disabled = false;
 });
