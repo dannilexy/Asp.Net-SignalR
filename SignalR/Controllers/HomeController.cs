@@ -37,6 +37,11 @@ namespace SignalR.Controllers
             return View();
         }
 
+        public IActionResult BasicChat()
+        {
+            return View();
+        }
+
         public IActionResult DeathlyHallowRace()
         {
             return View();
